@@ -13,9 +13,9 @@ Go to website - [Link](https://sp-ai-image.netlify.app/)
 |Feature|Description|
 |:--:|:--|
 |Text to Image|<img src="https://user-images.githubusercontent.com/106734133/217093052-068595f5-a23b-4c35-9f66-48e9e520fe76.jpg" height="400"><br><br>Requests the entered text to the server and extracts images related to the text.|
-|Loading|<img src="https://user-images.githubusercontent.com/106734133/217094186-91f45a16-2bd8-4d17-96f7-2c88561a162d.jpg" height="400"><br><br>Show a loading animation while getting the requested item.|
+|Loading|<img src="https://user-images.githubusercontent.com/106734133/217094186-91f45a16-2bd8-4d17-96f7-2c88561a162d.jpg"><br><br>Show a loading animation while getting the requested item.|
 |Prevent Request|<img src="https://user-images.githubusercontent.com/106734133/217094633-3dba2d21-d5b5-463e-92a2-25e7e7d41301.jpg"><br><br>Prevent requesting another item while loading.|
-|Catch Error|<img src="https://user-images.githubusercontent.com/106734133/217095836-2d919e6e-67e2-4fa9-ab79-b390e41d0d5c.jpg" height="400"><br><br>If an error occurs during fetch, determine what kind of error it is through the status. And inform the user what errors were found.|
+|Catch Error|<img src="https://user-images.githubusercontent.com/106734133/217095836-2d919e6e-67e2-4fa9-ab79-b390e41d0d5c.jpg"><br><br>If an error occurs during fetch, determine what kind of error it is through the status. And inform the user what errors were found.|
 
 ## Technology Used
 
