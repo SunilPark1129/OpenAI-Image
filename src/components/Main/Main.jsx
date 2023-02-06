@@ -8,10 +8,13 @@ const Main = () => {
   const [inputValue, setInputValue] = useState("");
   const [unmounted, setUnmounted] = useState(true);
 
+  // request openAI image
+  // call function and get return values
   const [requestFetch, isLoading, resImage, error, prompt] = useFetch();
 
   const onClickHandler = () => {
     if (inputValue.trim() !== "") {
+      // send input value as a props and request fetch
       requestFetch(inputValue.trim());
       setUnmounted(false);
       setInputValue("");

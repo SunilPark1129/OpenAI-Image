@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export function useFetch() {
   const [prompt, setPrompt] = useState("");
@@ -7,6 +7,7 @@ export function useFetch() {
   const [error, setError] = useState(null);
 
   const generateImage = async () => {
+    // set method, headers, body to requset the fetch image
     const requestOptions = {
       method: "POST",
       headers: {
@@ -19,11 +20,13 @@ export function useFetch() {
         size: "512x512",
       }),
     };
+    // request
     try {
       const response = await fetch(
         "https://api.openai.com/v1/images/generations",
         requestOptions
       );
+      // handling status errors
       if (!response.ok) {
         if (response.status === 400) {
           throw Error("Bad Request, try to use other input value");
@@ -54,6 +57,7 @@ export function useFetch() {
     }
   };
 
+  // Whenever prompt (input value), a function is called to make a request to the server
   useEffect(() => {
     if (prompt !== "") {
       generateImage();
@@ -63,6 +67,7 @@ export function useFetch() {
     };
   }, [prompt]);
 
+  // get props from other component
   function requestFetch(inputValue) {
     setPrompt(inputValue);
   }

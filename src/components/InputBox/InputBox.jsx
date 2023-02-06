@@ -1,5 +1,5 @@
+// get input value and send back to the Main to request the fetch
 import React from "react";
-
 const InputBox = ({
   unmounted,
   inputValue,

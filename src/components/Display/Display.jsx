@@ -1,3 +1,4 @@
+// This page displays the error message and response returned values
 import React from "react";
 import Loading from "./Loading";
 import Screen from "./Screen";
