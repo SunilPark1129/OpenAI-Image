@@ -30,6 +30,8 @@ git clone https://github.com/SunilPark1129/OpenAI-Image.git
 ```
 npm run dev
 ```
+.Env
+```
 You may need API KEY for this installation to run the code.
 You can visit the website instead. [Link](https://sp-ai-image.netlify.app/)
 ```
