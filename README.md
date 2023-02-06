@@ -33,8 +33,9 @@ npm run dev
 .Env
 ```
 You may need API KEY for this installation to run the code.
-You can visit the website instead. [Link](https://sp-ai-image.netlify.app/)
+You can visit the website instead.
 ```
+[Link](https://sp-ai-image.netlify.app/)
 
 ## Self-improvement
 
