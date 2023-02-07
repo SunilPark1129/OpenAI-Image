@@ -26,22 +26,21 @@ Go to website - [Link](https://sp-ai-image.netlify.app/)
 ```
 git clone https://github.com/SunilPark1129/OpenAI-Image.git
 ```
+2. Install
+```
+npm i
+```
 2. run the website
 ```
 npm run dev
-```
-.Env
-```
-You may need API KEY for this installation to run the code.
-You can visit the website instead.
 ```
 [Link](https://sp-ai-image.netlify.app/)
 
 ## Self-improvement
 
-- I used openAI, which is popular these days. The server was requested without any problems.
-- First time using Vite. I didn't find much difference from React, but I was satisfied with how fast it was to use (hmr).
+- First time using Vite. I was satisfied with how fast it was to use (hmr).
 - In this project, I studied more how to fetch and practiced catching errors more.
+- I have learned that I need a backend server to hide my api key. I have to create a server on the backend and hide the api key. Even if I hide it with .env, people can still check it thorugh the dev tool. It's an api key with a limit anyway, so I left it open.
 
 ## Project Status
 Completed
