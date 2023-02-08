@@ -40,7 +40,7 @@ npm run dev
 
 - First time using Vite. I was satisfied with how fast it was to use (hmr).
 - In this project, I studied more how to fetch and practiced catching errors more.
-- I have learned that I need a backend server to hide my api key. I have to create a server on the backend and hide the api key. Even if I hide it with .env, people can still check it thorugh the dev tool. It's an api key with a limit anyway, so I left it open.
+- I have learned that I need a backend server to hide the api key. Even if I hide it with .env, people can still check it thorugh the dev tool. So I made a backend server to study and hide the api key.
 
 ## Project Status
 Completed
