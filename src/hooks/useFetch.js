@@ -6,24 +6,25 @@ export function useFetch() {
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // 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
   const generateImage = async () => {
     // set method, headers, body to requset the fetch image
     const requestOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + String(import.meta.env.VITE_OPEN_API_KEY),
+        // Authorization: "Bearer " + String(import.meta.env.VITE_OPEN_API_KEY),
       },
       body: JSON.stringify({
         prompt: prompt,
-        n: 1,
-        size: "512x512",
       }),
     };
     // request
     try {
       const response = await fetch(
-        "https://api.openai.com/v1/images/generations",
+        // "https://api.openai.com/v1/images/generations",
+        // "http://localhost:5000/openai/generateimage",
+        "https://openai-backend-sunilpark1129.onrender.com/openai/generateimage",
         requestOptions
       );
       // handling status errors
@@ -47,7 +48,7 @@ export function useFetch() {
         );
       }
       const data = await response.json();
-      setResImage(data.data[0].url);
+      setResImage(data.data);
       setLoading(false);
       setError(null);
     } catch (err) {

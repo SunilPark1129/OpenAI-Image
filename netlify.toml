@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/*"
+to = "https://openai-backend-sunilpark1129.onrender.com/:splat"
+status = 200
