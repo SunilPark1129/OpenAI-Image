@@ -12,7 +12,6 @@ const InputBox = ({
     <section className="input-box">
       <input
         type="text"
-        maxLength={50}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={onKeyHandler}
