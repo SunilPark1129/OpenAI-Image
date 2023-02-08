@@ -1,7 +1,8 @@
 # OpenAI Image
 ![openai image](https://user-images.githubusercontent.com/106734133/217092625-692658eb-7e13-4de7-bb2e-25aa116ec2d7.jpg)
 
-Go to website - [Link](https://sp-ai-image.netlify.app/)
+Go to website - [Link](https://sp-ai-image.netlify.app/)<br>
+Go to backend - [Link](https://github.com/SunilPark1129/openai-backend)
 
 ## Project Description
 
@@ -40,7 +41,7 @@ npm run dev
 
 - First time using Vite. I was satisfied with how fast it was to use (hmr).
 - In this project, I studied more how to fetch and practiced catching errors more.
-- I have learned that I need a backend server to hide my api key. I have to create a server on the backend and hide the api key. Even if I hide it with .env, people can still check it thorugh the dev tool. It's an api key with a limit anyway, so I left it open.
+- I have learned that I need a backend server to hide the api key. Even if I hide it with .env, people can still check it thorugh the dev tool. So I made a backend server to study and hide the api key.
 
 ## Project Status
 Completed
