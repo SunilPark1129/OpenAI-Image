@@ -6,14 +6,12 @@ export function useFetch() {
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // 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
   const generateImage = async () => {
     // set method, headers, body to requset the fetch image
     const requestOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: "Bearer " + String(import.meta.env.VITE_OPEN_API_KEY),
       },
       body: JSON.stringify({
         prompt: prompt,
@@ -22,8 +20,6 @@ export function useFetch() {
     // request
     try {
       const response = await fetch(
-        // "https://api.openai.com/v1/images/generations",
-        // "http://localhost:5000/openai/generateimage",
         "https://openai-backend-sunilpark1129.onrender.com/openai/generateimage",
         requestOptions
       );
