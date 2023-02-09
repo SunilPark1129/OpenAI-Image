@@ -14,6 +14,7 @@ main {
   width: 100%;
   border: 1px solid rgb(58, 58, 58);
   display: flex;
+  text-align: center;
 }
 .display-image__screen {
   position: relative;
@@ -42,35 +43,22 @@ main {
   height: 2rem;
   border-radius: 50%;
   border: 8px solid transparent;
-  -webkit-animation: loading-ani 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
-          animation: loading-ani 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+  animation: loading-ani 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
 }
 .loading-ani span:nth-of-type(1) {
   border-color: rgba(175, 197, 230, 0.445) rgba(175, 197, 230, 0.466) rgb(175, 197, 230) transparent;
-  -webkit-animation-delay: -0.1s;
-          animation-delay: -0.1s;
+  animation-delay: -0.1s;
   z-index: 4;
 }
 .loading-ani span:nth-of-type(2) {
   border-color: rgba(128, 169, 231, 0.438) rgb(128, 169, 231) rgb(128, 169, 231) transparent;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+  animation-delay: 0s;
   z-index: 3;
 }
 .loading-ani span:nth-of-type(3) {
   border-color: rgb(56, 108, 185) rgb(56, 108, 185) transparent transparent;
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
+  animation-delay: 0.1s;
   z-index: 2;
-}
-
-@-webkit-keyframes loading-ani {
-  0% {
-    transform: rotate(-140deg);
-  }
-  100% {
-    transform: rotate(220deg);
-  }
 }
 
 @keyframes loading-ani {
@@ -93,10 +81,56 @@ main {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 60%;
 }
 
 .prompt {
   position: absolute;
   bottom: 100%;
   font-size: 0.8rem;
+}
+
+input[type=file] {
+  display: none;
+}
+
+.input-text {
+  width: 12rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  outline: 1px solid transparent;
+  transition: 0.25s;
+}
+.input-text:focus {
+  border-color: rgb(105, 147, 224);
+}
+
+.input-file {
+  width: 12rem;
+  height: 3rem;
+  border: 1px solid #ccc;
+  display: inline-block;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: 0.25s;
+}
+.input-file--disabled {
+  filter: brightness(40%);
+  cursor: not-allowed;
+}
+.input-file:hover {
+  border: 1px solid rgb(105, 147, 224);
+}
+.input-file__icon {
+  font-size: 1.5rem;
+  display: flex;
+}
+.input-file__icon svg {
+  margin: auto;
 }/*# sourceMappingURL=main.css.map */

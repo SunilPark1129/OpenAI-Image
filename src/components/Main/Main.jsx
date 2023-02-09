@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./main.css";
 import { useFetch } from "../../hooks/useFetch";
 import Display from "../Display/Display";
@@ -8,6 +8,7 @@ const Main = () => {
   const [inputValue, setInputValue] = useState("");
   const [unmounted, setUnmounted] = useState(true);
   const [isText, setIsText] = useState(false);
+  const refReset = useRef(null);
 
   // request openAI image
   // call function and get return values
@@ -30,7 +31,10 @@ const Main = () => {
 
   function onChangeHandler(e) {
     const { files } = e.target;
+    if (files.length === 0) return;
+    if (files[0].type !== "image/jpeg" && files[0].type !== "image/png") return;
     setUnmounted(false);
+
     const read = new FileReader();
     read.onloadend = function () {
       requestFetch(read.result, false);
@@ -38,6 +42,7 @@ const Main = () => {
 
     read.readAsDataURL(files[0]);
     setIsText(false);
+    refReset.current.value = "";
   }
 
   return (
@@ -57,8 +62,9 @@ const Main = () => {
         onClickHandler={onClickHandler}
         onKeyHandler={onKeyHandler}
         isLoading={isLoading}
+        onChangeHandler={onChangeHandler}
+        refReset={refReset}
       />
-      <input type="file" onChange={onChangeHandler} />
       <h1>OpenAI - Designed by Sunil Park</h1>
     </main>
   );

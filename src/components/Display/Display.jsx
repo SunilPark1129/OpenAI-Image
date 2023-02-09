@@ -7,7 +7,11 @@ const Display = ({ unmounted, isLoading, error, resImage, prompt, isText }) => {
     <section className="display-image">
       <article className="display-image__screen">
         {unmounted ? (
-          <div className="error">I'll draw your text</div>
+          <div className="error">
+            <p>I'll draw your text</p>
+            <p>or</p>
+            <p>If you upload a image, I will draw something similar to it</p>
+          </div>
         ) : !isLoading ? (
           <Screen
             error={error}

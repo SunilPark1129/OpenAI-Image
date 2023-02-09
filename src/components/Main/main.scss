@@ -14,6 +14,7 @@ main {
   width: 100%;
   border: 1px solid rgb(58, 58, 58);
   display: flex;
+  text-align: center;
   &__screen {
     position: relative;
     width: 100%;
@@ -83,10 +84,56 @@ main {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 60%;
 }
 
 .prompt {
   position: absolute;
   bottom: 100%;
   font-size: 0.8rem;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.input-text {
+  width: 12rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  outline: 1px solid transparent;
+  transition: 0.25s;
+  &:focus {
+    border-color: rgb(105, 147, 224);
+  }
+}
+
+.input-file {
+  width: 12rem;
+  height: 3rem;
+  border: 1px solid #ccc;
+  display: inline-block;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: 0.25s;
+  &--disabled {
+    filter: brightness(40%);
+    cursor: not-allowed;
+  }
+  &:hover {
+    border: 1px solid rgb(105, 147, 224);
+  }
+  &__icon {
+    font-size: 1.5rem;
+    display: flex;
+    svg {
+      margin: auto;
+    }
+  }
 }
