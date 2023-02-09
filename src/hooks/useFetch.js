@@ -8,15 +8,6 @@ export function useFetch() {
   const [error, setError] = useState(null);
 
   const generateImage = async () => {
-    // set method, headers, body to requset the fetch image
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-type": "multipart/form-data",
-      },
-      body: prompt[0],
-    };
-
     axios
       .post(
         `https://openai-backend-sunilpark1129.onrender.com/openai/${
