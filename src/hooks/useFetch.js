@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 
 export function useFetch() {
-  const [prompt, setPrompt] = useState("");
+  const [prompt, setPrompt] = useState(["", true]);
   const [resImage, setResImage] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  // const [isText, setIsText] = useState(true);
 
   const generateImage = async () => {
     // set method, headers, body to requset the fetch image
@@ -14,13 +15,13 @@ export function useFetch() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        prompt: prompt,
+        prompt: prompt[0],
       }),
     };
     // request
     try {
       const response = await fetch(
-        "https://openai-backend-sunilpark1129.onrender.com/openai/generateimage",
+        `http://localhost:5000/openai/${prompt[1] ? "generateimage" : "edit"}`,
         requestOptions
       );
       // handling status errors
@@ -56,7 +57,7 @@ export function useFetch() {
 
   // Whenever prompt (input value), a function is called to make a request to the server
   useEffect(() => {
-    if (prompt !== "") {
+    if (prompt[0] !== "") {
       generateImage();
     }
     return () => {
@@ -65,8 +66,9 @@ export function useFetch() {
   }, [prompt]);
 
   // get props from other component
-  function requestFetch(inputValue) {
-    setPrompt(inputValue);
+  function requestFetch(inputValue, bool) {
+    // console.log(bool);
+    setPrompt([inputValue, bool]);
   }
 
   return [requestFetch, isLoading, resImage, error, prompt];
