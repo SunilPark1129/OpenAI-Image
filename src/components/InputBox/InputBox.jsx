@@ -45,8 +45,7 @@ const InputBox = ({
           ref={refReset}
           onChange={onChangeHandler}
           disabled={isLoading && !unmounted}
-          accept="image/*"
-          capture
+          accept="image/*;capture=camera"
         />
       </label>
     </section>
