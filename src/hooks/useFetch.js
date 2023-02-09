@@ -21,7 +21,9 @@ export function useFetch() {
     // request
     try {
       const response = await fetch(
-        `http://localhost:5000/openai/${prompt[1] ? "generateimage" : "edit"}`,
+        `https://openai-backend-sunilpark1129.onrender.com/openai/${
+          prompt[1] ? "generateimage" : "edit"
+        }`,
         requestOptions
       );
       // handling status errors
