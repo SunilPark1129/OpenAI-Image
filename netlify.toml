@@ -1,7 +1,3 @@
-for = "/*"
-[headers.values]
-Access-Control-Allow-Origin = "*"```
-
 [[redirects]]
 from = "/*"
 to = "https://openai-backend-sunilpark1129.onrender.com/:splat"
