@@ -80,7 +80,7 @@ main {
   p {
     position: absolute;
     bottom: 2rem;
-    animation: 2s loading-ani-p infinite;
+    color: rgb(155, 155, 155);
   }
 }
 
@@ -90,18 +90,6 @@ main {
   }
   100% {
     transform: rotate(220deg);
-  }
-}
-
-@keyframes loading-ani-p {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
