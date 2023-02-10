@@ -16,25 +16,6 @@ export function useFetch() {
         { prompt: prompt[0] }
       )
       .then((data) => {
-        if (!data.statusText === "OK") {
-          if (data.request.status === 400) {
-            throw Error("Bad Request, try to use other input value");
-          }
-          if (data.request.status === 404) {
-            throw Error("Issue on our server, something wrong with the API.");
-          }
-          if (data.request.status === 429) {
-            throw Error(
-              "The engine is currently overloaded. Please try again later."
-            );
-          }
-          if (data.request.status <= 399) {
-            throw Error("Can't response, something wrong with the client side");
-          }
-          throw Error(
-            "Can't response, we found an error while processing your request"
-          );
-        }
         setResImage(data.data.data);
         setLoading(false);
         setError(null);
@@ -42,7 +23,20 @@ export function useFetch() {
       .catch((err) => {
         setLoading(false);
         setResImage(null);
-        setError(String(err));
+        if (err.response.status === 400) {
+          setError("Bad Request, try to use other input value");
+        } else if (err.response.status === 404) {
+          console.log("here!");
+          setError("Issue on our server, something wrong with the API");
+        } else if (err.response.status === 429) {
+          setError(
+            "The engine is currently overloaded. Please try again later"
+          );
+        } else if (err.response.status <= 399) {
+          setError("Can't response, something wrong with the client side");
+        } else {
+          setError(String(err));
+        }
       });
   };
 

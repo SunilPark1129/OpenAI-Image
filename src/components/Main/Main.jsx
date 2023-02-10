@@ -45,10 +45,6 @@ const Main = () => {
     refReset.current.value = "";
   }
 
-  useEffect(() => {
-    console.log(originalImage);
-  }, [originalImage]);
-
   function contentClickHandler() {
     setIsImageContent((prev) => !prev);
     if (refReset.current) refReset.current.value = "";
