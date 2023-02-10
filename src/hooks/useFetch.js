@@ -10,7 +10,7 @@ export function useFetch() {
   const generateImage = async () => {
     axios
       .post(
-        `${process.env.BASE_WEBSITE_KEY}/openai/${
+        `${import.meta.process.env.BASE_WEBSITE_KEY}/openai/${
           prompt[1] ? "generateimage" : "edit"
         }`,
         { prompt: prompt[0] }
