@@ -31,13 +31,15 @@ const Screen = ({ error, getImage, prompt, isImageContent, originalImage }) => {
             </button>
           )}
           {isOriginalVisible ? (
-            <img
-              className="original-image"
-              src={originalImage}
-              alt="User uploaded image"
-            />
+            <div className="original-image">
+              <img src={originalImage} alt="User uploaded image" />
+            </div>
           ) : null}
-          <img src={getImage} alt={"User uploaded image"} />
+          <img
+            className={isOriginalVisible ? "opacity" : null}
+            src={getImage}
+            alt={"User uploaded image"}
+          />
         </>
       ) : null}
     </>

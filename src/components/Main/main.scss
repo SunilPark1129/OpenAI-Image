@@ -22,17 +22,27 @@ main {
   }
   img {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     top: 0;
     width: 100%;
     height: 100%;
   }
   .original-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
     z-index: 9;
-    width: auto;
-    outline: 2px dashed rgb(255, 100, 100);
+    pointer-events: none;
+    img {
+      object-fit: contain;
+    }
   }
+}
+
+.opacity {
+  opacity: 0.3;
 }
 
 .loading-ani {
