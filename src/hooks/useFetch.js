@@ -47,11 +47,14 @@ export function useFetch() {
     }
     return () => {
       setLoading(true);
+      setResImage(null);
+      setError(null);
     };
   }, [prompt]);
 
   // get props from other component
   function requestFetch(inputValue, bool) {
+    setLoading(true);
     setPrompt([inputValue, bool]);
   }
 

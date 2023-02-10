@@ -8,10 +8,12 @@ const Display = ({
   unmounted,
   isLoading,
   error,
-  getImage,
+  resImage,
   prompt,
   isImageContent,
   originalImage,
+  orientationRotate,
+  isWidthLonger,
 }) => {
   return (
     <section className="display-image">
@@ -21,10 +23,12 @@ const Display = ({
         ) : !isLoading ? (
           <Screen
             error={error}
-            getImage={getImage}
+            resImage={resImage}
             prompt={prompt}
             isImageContent={isImageContent}
             originalImage={originalImage}
+            orientationRotate={orientationRotate}
+            isWidthLonger={isWidthLonger}
           />
         ) : (
           <Loading isImageContent={isImageContent} />
