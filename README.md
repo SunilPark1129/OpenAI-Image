@@ -2,7 +2,6 @@
 ![openai image](https://user-images.githubusercontent.com/106734133/217092625-692658eb-7e13-4de7-bb2e-25aa116ec2d7.jpg)
 
 Go to website - [Link](https://sp-ai-image.netlify.app/)<br>
-Go to backend - [Link](https://github.com/SunilPark1129/openai-backend)
 
 ## Project Description
 
