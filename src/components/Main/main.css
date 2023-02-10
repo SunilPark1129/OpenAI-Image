@@ -77,6 +77,11 @@ main {
   animation-delay: 0.1s;
   z-index: 2;
 }
+.loading-ani p {
+  position: absolute;
+  bottom: 2rem;
+  animation: 2s loading-ani-p infinite;
+}
 
 @keyframes loading-ani {
   0% {
@@ -84,6 +89,17 @@ main {
   }
   100% {
     transform: rotate(220deg);
+  }
+}
+@keyframes loading-ani-p {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .input-box {

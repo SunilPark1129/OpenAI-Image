@@ -70,7 +70,7 @@ const Display = ({
             originalImage={originalImage}
           />
         ) : (
-          <Loading />
+          <Loading isImageContent={isImageContent} />
         )}
       </article>
     </section>
