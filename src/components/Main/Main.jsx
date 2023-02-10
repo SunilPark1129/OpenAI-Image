@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./main.css";
 import { useFetch } from "../../hooks/useFetch";
 import Display from "../Display/Display";
@@ -7,7 +7,9 @@ import InputBox from "../InputBox/InputBox";
 const Main = () => {
   const [inputValue, setInputValue] = useState("");
   const [unmounted, setUnmounted] = useState(true);
-  const [isText, setIsText] = useState(false);
+  const [getImage, setImage] = useState(null);
+  const [isImageContent, setIsImageContent] = useState(true);
+  const [originalImage, setOriginalImage] = useState(null);
   const refReset = useRef(null);
 
   // request openAI image
@@ -16,11 +18,9 @@ const Main = () => {
 
   const onClickHandler = () => {
     if (inputValue.trim() !== "") {
-      // send input value as a props and request fetch
       requestFetch(inputValue.trim(), true);
       setUnmounted(false);
       setInputValue("");
-      setIsText(true);
     }
   };
 
@@ -41,9 +41,28 @@ const Main = () => {
     };
 
     read.readAsDataURL(files[0]);
-    setIsText(false);
+    setOriginalImage(URL.createObjectURL(files[0]));
     refReset.current.value = "";
   }
+
+  useEffect(() => {
+    console.log(originalImage);
+  }, [originalImage]);
+
+  function contentClickHandler() {
+    setIsImageContent((prev) => !prev);
+    if (refReset.current) refReset.current.value = "";
+    setUnmounted(true);
+    setInputValue("");
+    setImage(null);
+    setOriginalImage(null);
+  }
+
+  useEffect(() => {
+    if (resImage) {
+      setImage(resImage);
+    }
+  }, [resImage]);
 
   return (
     <main>
@@ -51,9 +70,10 @@ const Main = () => {
         unmounted={unmounted}
         isLoading={isLoading}
         error={error}
-        resImage={resImage}
+        getImage={getImage}
         prompt={prompt}
-        isText={isText}
+        isImageContent={isImageContent}
+        originalImage={originalImage}
       />
       <InputBox
         unmounted={unmounted}
@@ -64,8 +84,10 @@ const Main = () => {
         isLoading={isLoading}
         onChangeHandler={onChangeHandler}
         refReset={refReset}
+        isImageContent={isImageContent}
+        contentClickHandler={contentClickHandler}
       />
-      <h1>OpenAI - Designed by Sunil Park</h1>
+      <h1>Developed by Sunil Park</h1>
     </main>
   );
 };

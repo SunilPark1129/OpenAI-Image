@@ -6,13 +6,11 @@ export function useFetch() {
   const [resImage, setResImage] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  // https://openai-backend-sunilpark1129.onrender.com
   const generateImage = async () => {
     axios
       .post(
-        `https://openai-backend-sunilpark1129.onrender.com/openai/${
-          prompt[1] ? "generateimage" : "edit"
-        }`,
+        `http://localhost:5000/openai/${prompt[1] ? "generateimage" : "edit"}`,
         { prompt: prompt[0] }
       )
       .then((data) => {

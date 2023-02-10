@@ -11,43 +11,54 @@ const InputBox = ({
   isLoading,
   refReset,
   onChangeHandler,
+  isImageContent,
+  contentClickHandler,
 }) => {
   return (
     <section className="input-box">
-      <input
-        className="input-text"
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onKeyDown={onKeyHandler}
-        placeholder="Type something..."
-      />
-      <button
-        disabled={(isLoading && !unmounted) || inputValue.trim() === ""}
-        onClick={onClickHandler}
-      >
-        Enter Text
+      {isImageContent ? (
+        <label
+          className={
+            isLoading && !unmounted
+              ? "input-file input-file--disabled"
+              : "input-file"
+          }
+        >
+          <div className="input-file__icon">
+            <FaImage />
+          </div>
+          <p>Upload Image</p>
+          <input
+            type="file"
+            ref={refReset}
+            onChange={onChangeHandler}
+            disabled={isLoading && !unmounted}
+            accept="image/*"
+          />
+        </label>
+      ) : (
+        <>
+          <div className="text-box">
+            <input
+              className="input-text"
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={onKeyHandler}
+              placeholder="Type something..."
+            />
+            <button
+              disabled={(isLoading && !unmounted) || inputValue.trim() === ""}
+              onClick={onClickHandler}
+            >
+              Enter
+            </button>
+          </div>
+        </>
+      )}
+      <button disabled={isLoading && !unmounted} onClick={contentClickHandler}>
+        {isImageContent ? "Use Text" : "Use Image"}
       </button>
-
-      <label
-        className={
-          isLoading && !unmounted
-            ? "input-file input-file--disabled"
-            : "input-file"
-        }
-      >
-        <div className="input-file__icon">
-          <FaImage />
-        </div>
-        <p>Upload Image</p>
-        <input
-          type="file"
-          ref={refReset}
-          onChange={onChangeHandler}
-          disabled={isLoading && !unmounted}
-          accept="image/*"
-        />
-      </label>
     </section>
   );
 };
