@@ -98,7 +98,7 @@ main {
   gap: 0.5rem;
 }
 
-.error {
+.guide {
   position: absolute;
   display: flex;
   flex-direction: column;

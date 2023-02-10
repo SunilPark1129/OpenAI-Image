@@ -13,7 +13,7 @@ const Screen = ({ error, getImage, prompt, isImageContent, originalImage }) => {
   }, [getImage]);
 
   return error !== null ? (
-    <div className="error">{error}</div>
+    <div className="guide">{error}</div>
   ) : (
     <>
       {getImage ? (
