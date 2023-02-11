@@ -248,9 +248,6 @@ main {
   filter: brightness(40%);
   cursor: not-allowed;
 }
-.input-file:hover {
-  border: 1px solid rgb(105, 147, 224);
-}
 .input-file__icon {
   font-size: 1.5rem;
   display: flex;
@@ -300,6 +297,12 @@ input[type=file] {
 .visible--actived {
   color: white;
 }
-.visible:hover {
-  color: rgb(105, 147, 224);
+
+@media (hover: hover) {
+  .input-file:hover {
+    border: 1px solid rgb(105, 147, 224);
+  }
+  .visible:hover {
+    color: rgb(105, 147, 224);
+  }
 }/*# sourceMappingURL=main.css.map */

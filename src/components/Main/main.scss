@@ -257,9 +257,6 @@ main {
     filter: brightness(40%);
     cursor: not-allowed;
   }
-  &:hover {
-    border: 1px solid rgb(105, 147, 224);
-  }
   &__icon {
     font-size: 1.5rem;
     display: flex;
@@ -309,7 +306,17 @@ input[type="file"] {
   &--actived {
     color: white;
   }
-  &:hover {
-    color: rgb(105, 147, 224);
+}
+
+@media (hover: hover) {
+  .input-file {
+    &:hover {
+      border: 1px solid rgb(105, 147, 224);
+    }
+  }
+  .visible {
+    &:hover {
+      color: rgb(105, 147, 224);
+    }
   }
 }

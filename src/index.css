@@ -11,6 +11,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -46,6 +51,8 @@ button:disabled {
   cursor: not-allowed;
 }
 
-button:hover {
-  border-color: rgb(105, 147, 224);
+@media (hover: hover) {
+  button:hover {
+    border-color: rgb(105, 147, 224);
+  }
 }
