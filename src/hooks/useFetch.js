@@ -23,6 +23,7 @@ export function useFetch() {
       .catch((err) => {
         setLoading(false);
         setResImage(null);
+        if (!err.response) return setError(String(err));
         if (err.response.status === 400) {
           setError("Bad Request, try to use other input value");
         } else if (err.response.status === 404) {

@@ -31,7 +31,7 @@ const Display = ({
             isWidthLonger={isWidthLonger}
           />
         ) : (
-          <Loading isImageContent={isImageContent} />
+          <Loading />
         )}
       </article>
     </section>
