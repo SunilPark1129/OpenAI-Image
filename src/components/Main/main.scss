@@ -310,13 +310,9 @@ input[type="file"] {
 
 @media (hover: hover) {
   .input-file {
-    &:hover {
-      border: 1px solid rgb(105, 147, 224);
-    }
+    border: 1px solid rgb(105, 147, 224);
   }
   .visible {
-    &:hover {
-      color: rgb(105, 147, 224);
-    }
+    color: rgb(105, 147, 224);
   }
 }
