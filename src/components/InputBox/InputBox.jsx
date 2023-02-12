@@ -57,7 +57,7 @@ const InputBox = ({
         </>
       )}
       <button disabled={isLoading && !unmounted} onClick={contentClickHandler}>
-        {isImageContent ? "Use Text" : "Use Image"}
+        {isImageContent ? "Words to an image" : "Square up an image"}
       </button>
     </section>
   );
