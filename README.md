@@ -1,5 +1,5 @@
 # OpenAI Image
-![openai image](https://user-images.githubusercontent.com/106734133/218520602-efb9ef95-19d8-4158-8519-3a60c1d6e4b7.jpg)
+![openai image](https://user-images.githubusercontent.com/106734133/218526464-441ad6c0-fb5e-4365-8fe8-f9aac8557aa3.jpg)
 
 Go to website - [Link](https://sp-ai-image.netlify.app/)<br>
 
