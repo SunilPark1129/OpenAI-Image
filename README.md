@@ -1,5 +1,5 @@
 # OpenAI Image
-![openai image](https://user-images.githubusercontent.com/106734133/217092625-692658eb-7e13-4de7-bb2e-25aa116ec2d7.jpg)
+![openai image](https://user-images.githubusercontent.com/106734133/218520602-efb9ef95-19d8-4158-8519-3a60c1d6e4b7.jpg)
 
 Go to website - [Link](https://sp-ai-image.netlify.app/)<br>
 
@@ -9,13 +9,17 @@ Go to website - [Link](https://sp-ai-image.netlify.app/)<br>
 
 ## Features
 > Features that I would like to introduce.
+![imageupload - Copy - Copy](https://user-images.githubusercontent.com/106734133/218523312-29f7e593-50eb-4205-a0ef-f2c5586ece28.jpg)
 
 |Feature|Description|
 |:--:|:--|
-|Text to Image|<img src="https://user-images.githubusercontent.com/106734133/217093052-068595f5-a23b-4c35-9f66-48e9e520fe76.jpg" height="400"><br><br>Requests the entered text to the server and extracts images related to the text.|
-|Loading|<img src="https://user-images.githubusercontent.com/106734133/217094186-91f45a16-2bd8-4d17-96f7-2c88561a162d.jpg"><br><br>Show a loading animation while getting the requested item.|
-|Prevent Request|<img src="https://user-images.githubusercontent.com/106734133/217094633-3dba2d21-d5b5-463e-92a2-25e7e7d41301.jpg"><br><br>Prevent requesting another item while loading.|
-|Catch Error|<img src="https://user-images.githubusercontent.com/106734133/217095836-2d919e6e-67e2-4fa9-ab79-b390e41d0d5c.jpg" height="400"><br><br>If an error occurs during fetch, determine what kind of error it is through the status. And inform the user what errors were found.|
+|Image Upload|<img src="https://user-images.githubusercontent.com/106734133/218521320-a5dad5e8-0728-48c1-a956-1d203e7395dd.jpg" height="400"><br><br>A user uploads an image and requests the server to use image editing provided by open ai. In this process, I found out that there is an orientation in the image, and rotated it as much as the orientation value to remove the error variable.|
+|Image Edited|<img src="https://user-images.githubusercontent.com/106734133/218522623-74c7c22d-a7f4-4089-b7d5-999d52aa6efd.jpg" height="400"><br><br>When a rectangular image is uploaded, the image is made square and the missing part is set to be drawn by AI.|
+|Image Edited|<img src="https://user-images.githubusercontent.com/106734133/218522623-74c7c22d-a7f4-4089-b7d5-999d52aa6efd.jpg" height="400"><br><br>I created a click event to see how much more the edited photo has grown and changed than the original photo.|
+|Text to Image|<img src="https://user-images.githubusercontent.com/106734133/218521522-80a672e1-d563-43d4-8fd6-3de735a3203e.jpg" height="400"><br><br>Requests the entered text to the server and extracts images related to the text.|
+|Loading|<img src="https://user-images.githubusercontent.com/106734133/218520719-15b4c302-8b35-4ebd-9be3-0d0778e46ced.jpg"><br><br>Show a loading animation while getting the requested item.|
+|Prevent Request|<img src="https://user-images.githubusercontent.com/106734133/218521111-a3f9933f-f5c5-41c9-992e-9037a1f56eeb.jpg"><br><br>Prevent requesting another item while loading. ```disable = isLoading```|
+|Catch Error|<img src="https://user-images.githubusercontent.com/106734133/218521190-45f836fd-c44f-4ede-8db0-57590c8d179c.jpg" height="400"><br><br>If an error occurs during fetch, determine what kind of error it is through the status. And inform the user what errors were found.|
 
 ## Technology Used
 
@@ -41,6 +45,8 @@ npm run dev
 - First time using Vite. I was satisfied with how fast it was to use (hmr).
 - In this project, I studied more how to fetch and practiced catching errors more.
 - I have learned that I need a backend server to hide the api key. Even if I hide it with .env, people can still check it thorugh the dev tool. So I made a backend server to study and hide the api key.
+- I noticed that each photo has an orientation property. When developers receive a picture file, developers need to modify the value of orientatino.
+- I found out how to convert an image to base64 and turn it back into a readable string.
 
 ## Project Status
 Completed
