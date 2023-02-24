@@ -5,7 +5,7 @@ import Display from "../Display/Display";
 import InputBox from "../InputBox/InputBox";
 
 // since exif-js is not supporting React, so I have used exifr
-import exif from "exif-js";
+// import exif from "exif-js";
 import exifr from "exifr";
 
 const Main = () => {
