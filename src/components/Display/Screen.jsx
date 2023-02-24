@@ -1,3 +1,4 @@
+// display the final fetched value
 import React, { useState, useEffect } from "react";
 import { FaRegEye } from "react-icons/fa";
 
@@ -21,14 +22,17 @@ const Screen = ({
   }, [resImage]);
 
   return error !== null ? (
+    // error handling
     <div className="guide">{error}</div>
   ) : (
     <>
       {resImage ? (
         <>
           {!isImageContent ? (
+            // display what user have typed
             <div className="prompt">{prompt}</div>
           ) : (
+            // display the button for comparing the length of the original photo with eddited photo
             <button
               className={`visible ${
                 isOriginalVisible ? "visible--actived" : ""
@@ -38,6 +42,7 @@ const Screen = ({
               <FaRegEye />
             </button>
           )}
+          {/* original image to compare the edited image */}
           <div
             className={`original-image ${
               isOriginalVisible ? "original-image--opacity" : ""
@@ -57,6 +62,7 @@ const Screen = ({
               />
             </div>
           </div>
+          {/* fetched image */}
           <img
             style={{ transform: `rotate(${orientationRotate}deg)` }}
             src={resImage}

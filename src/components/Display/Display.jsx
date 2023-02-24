@@ -1,4 +1,4 @@
-// This page displays the error message and response returned values
+// This page displays returned value after fetched
 import React from "react";
 import Loading from "./Loading";
 import Screen from "./Screen";

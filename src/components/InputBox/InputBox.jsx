@@ -17,6 +17,7 @@ const InputBox = ({
   return (
     <section className="input-box">
       {isImageContent ? (
+        // return image file
         <label
           className={
             isLoading && !unmounted
@@ -37,6 +38,7 @@ const InputBox = ({
           />
         </label>
       ) : (
+        // return text value
         <>
           <div className="text-box">
             <input

@@ -1,11 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import "./main.css";
 import { useFetch } from "../../hooks/useFetch";
 import Display from "../Display/Display";
 import InputBox from "../InputBox/InputBox";
-import EXIF from "exif-js";
+
+// since exif-js is not supporting React, so I have used exifr
+import exif from "exif-js";
 import exifr from "exifr";
-import loadImage from "blueimp-load-image";
 
 const Main = () => {
   const [inputValue, setInputValue] = useState("");
@@ -16,10 +17,10 @@ const Main = () => {
   const [orientationRotate, setOrientationRotate] = useState(0);
   const [isWidthLonger, setIsWidthLonger] = useState(true);
 
-  // request openAI image
-  // call function and get return values
+  // request image
   const [requestFetch, isLoading, resImage, error, prompt] = useFetch();
 
+  // input submit handler
   const onClickHandler = () => {
     if (inputValue.trim() !== "") {
       requestFetch(inputValue.trim(), true);
@@ -28,19 +29,25 @@ const Main = () => {
     }
   };
 
+  // input enter submit handler
   const onKeyHandler = (e) => {
     if (isLoading && !unmounted) return;
     if (e.key === "Enter") onClickHandler();
   };
 
+  // file submit handler
   function onChangeHandler(e) {
     const { files } = e.target;
+
+    // return none when this website doesn't support user's file
     if (files.length === 0) return;
     if (files[0].type !== "image/jpeg" && files[0].type !== "image/png") return;
     setUnmounted(false);
 
+    // read the image as base64
     const read = new FileReader();
     read.onloadend = async function () {
+      // check if image's width or height is longer
       const image = new Image();
       image.src = read.result;
       image.onload = () => {
@@ -52,6 +59,7 @@ const Main = () => {
         }
       };
 
+      // check orientation and return the value to rotate the image later
       let num = await exifr.orientation(read.result);
       switch (num) {
         case 1:
@@ -84,11 +92,11 @@ const Main = () => {
       requestFetch(read.result, false);
     };
     read.readAsDataURL(files[0]);
-
     setOriginalImage(URL.createObjectURL(files[0]));
     refReset.current.value = "";
   }
 
+  // to check if current page is for the text to image page or editing the image page
   function contentClickHandler() {
     setIsImageContent((prev) => !prev);
     if (refReset.current) refReset.current.value = "";

@@ -1,3 +1,4 @@
+// this page displays a description of how the user can use this website.
 import React from "react";
 import { FaArrowRight, FaUser } from "react-icons/fa";
 
@@ -5,6 +6,7 @@ const Guide = ({ isImageContent }) => {
   return (
     <div className="guide">
       {isImageContent ? (
+        // description about image
         <>
           <h2>Upload Image</h2>
           <div className="rectangle">
@@ -27,6 +29,7 @@ const Guide = ({ isImageContent }) => {
           </p>
         </>
       ) : (
+        // description about text
         <>
           <h2>Text Image</h2>
           <div className="rectangle">
