@@ -5,20 +5,17 @@ Go to website - [Link](https://sp-ai-image.netlify.app/)<br>
 
 ## Project Description
 
-- Create an image from text by requesting the server to openAI.
+- A website using the recently popular AI which create images from the users’ text or image.
 
 ## Features
 > Features that I would like to introduce.
 
 |Feature|Description|
 |:--:|:--|
-|Image Upload|<img src="https://user-images.githubusercontent.com/106734133/218521320-a5dad5e8-0728-48c1-a956-1d203e7395dd.jpg" height="400"><br><br>A user uploads an image and requests the server to use image editing provided by open ai. In this process, I found out that there is an orientation in the image, and rotated it as much as the orientation value to remove the error variable.|
-|Image Edited|<img src="https://user-images.githubusercontent.com/106734133/218522623-74c7c22d-a7f4-4089-b7d5-999d52aa6efd.jpg" height="400"><br><br>When a rectangular image is uploaded, the image is made square and the missing part is set to be drawn by AI. OpenAI does not provide this service, so I changed some of the settings.|
-|Compare Clicker|<img src="https://user-images.githubusercontent.com/106734133/218525082-e0b894a3-ed56-4731-bda2-a7e1c8e9c833.jpg" height="400"><br><br>I created a click event to see how much more the edited photo has grown and changed than the original photo.|
-|Text to Image|<img src="https://user-images.githubusercontent.com/106734133/218521522-80a672e1-d563-43d4-8fd6-3de735a3203e.jpg" height="400"><br><br>Requests the entered text to the server and extracts images related to the text.|
-|Loading|<img src="https://user-images.githubusercontent.com/106734133/218520719-15b4c302-8b35-4ebd-9be3-0d0778e46ced.jpg" width="400"><br><br>Show a loading animation while getting the requested item. I also added animations to the fonts so that users don't get bored while waiting.|
-|Prevent Request|<img src="https://user-images.githubusercontent.com/106734133/218521111-a3f9933f-f5c5-41c9-992e-9037a1f56eeb.jpg"><br><br>Prevent requesting another item while loading. ```disable = isLoading```|
-|Catch Error|<img src="https://user-images.githubusercontent.com/106734133/218521190-45f836fd-c44f-4ede-8db0-57590c8d179c.jpg" width="400"><br><br>If an error occurs during fetch, determine what kind of error it is through the status. And inform the user what errors were found.|
+|Auto Image Converter|<img src="https://user-images.githubusercontent.com/106734133/218522623-74c7c22d-a7f4-4089-b7d5-999d52aa6efd.jpg" height="400"><br><br>Converts a rectangular image into a square image without cropping the original. The parts lacking in the original are added by drawing.<br>OpenAI asked 512x512 pixel size of the image when requested to the server. For the convenience of users, I have made it possible to receive images of any size.|
+|Image Orientation|<img src="https://user-images.githubusercontent.com/106734133/235763565-50397a98-d5d4-4340-91ec-c2c34da4f717.jpg" height="400"><br><br>When I was making the project, I found that there were orientation values in every images with different values. I had to calculate and rotate the image as much as the orientation value it had to prevent the unexpected angle when displaying on the screen.|
+|Compare Images|<img src="https://user-images.githubusercontent.com/106734133/218525082-e0b894a3-ed56-4731-bda2-a7e1c8e9c833.jpg" height="400"><br><br>Added a function to compare the original image and the changed image.|
+|Image/Text to Image|<img src="https://user-images.githubusercontent.com/106734133/218521522-80a672e1-d563-43d4-8fd6-3de735a3203e.jpg" height="400"><br><br>Users can upload their own images or request photos via text.|
 
 ## Technology Used
 
