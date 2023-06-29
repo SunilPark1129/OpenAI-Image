@@ -5,7 +5,7 @@ Go to website - [Link](https://sp-ai-image.netlify.app/)<br>
 
 ## Project Description
 
-- A website using the recently popular AI which create images from the users’ text or image.
+- AI creates the picture from user's text/image by requesting the server to openAI.
 
 ## Features
 > Features that I would like to introduce.
