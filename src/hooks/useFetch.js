@@ -27,7 +27,6 @@ export function useFetch() {
         if (err.response.status === 400) {
           setError("Bad Request, try to use other input value");
         } else if (err.response.status === 404) {
-          console.log("here!");
           setError("Issue on our server, something wrong with the API");
         } else if (err.response.status === 429) {
           setError(
