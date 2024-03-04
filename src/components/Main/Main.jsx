@@ -22,9 +22,15 @@ const Main = () => {
 
   // input submit handler
   const onClickHandler = () => {
+    // remove cache
+    if (originalImage) {
+      URL.revokeObjectURL(originalImage);
+    }
+
     if (inputValue.trim() !== "") {
       requestFetch(inputValue.trim(), true);
       setUnmounted(false);
+      setOrientationRotate(0);
       setInputValue("");
     }
   };
@@ -38,6 +44,11 @@ const Main = () => {
   // file submit handler
   function onChangeHandler(e) {
     const { files } = e.target;
+
+    // remove cache
+    if (originalImage) {
+      URL.revokeObjectURL(originalImage);
+    }
 
     // return none when this website doesn't support user's file
     if (files.length === 0) return;
@@ -98,6 +109,12 @@ const Main = () => {
 
   // to check if current page is for the text to image page or editing the image page
   function contentClickHandler() {
+    // remove cache
+    if (originalImage) {
+      URL.revokeObjectURL(originalImage);
+      setOriginalImage(null);
+    }
+
     setIsImageContent((prev) => !prev);
     if (refReset.current) refReset.current.value = "";
     setUnmounted(true);
