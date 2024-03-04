@@ -9,6 +9,7 @@ export function useFetch() {
 
   const generateImage = async () => {
     // dev port - http://localhost:5000
+    // ongoing - import.meta.env.VITE_BASE_WEBSITE_KEY
     axios
       .post(
         `${import.meta.env.VITE_BASE_WEBSITE_KEY}/openai/${
@@ -24,18 +25,13 @@ export function useFetch() {
       .catch((err) => {
         setLoading(false);
         setResImage(null);
-        if (!err.response) return setError(String(err));
+        if (!err.response) {
+          return setError(String(err));
+        }
         if (err.response.status === 400) {
-          setError("Bad Request, try to use other input value");
-        } else if (err.response.status === 404) {
-          setError("Issue on our server, something wrong with the API");
-        } else if (err.response.status === 429) {
-          setError(
-            "The engine is currently overloaded. Please try again later"
-          );
-        } else if (err.response.status <= 399) {
-          setError("Can't response, something wrong with the client side");
+          setError(err.response.data.error);
         } else {
+          console.log("here?");
           setError(String(err));
         }
       });
