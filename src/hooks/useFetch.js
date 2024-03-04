@@ -11,7 +11,7 @@ export function useFetch() {
     axios
       .post(
         `${
-          import.meta.env.VITE_BASE_WEBSITE_KEY && "http://localhost:5000"
+          import.meta.env.VITE_BASE_WEBSITE_KEY ?? "http://localhost:5000"
         }/openai/${prompt[1] ? "generateimage" : "edit"}`,
         { prompt: prompt[0] }
       )
