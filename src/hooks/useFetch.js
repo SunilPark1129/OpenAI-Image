@@ -8,13 +8,11 @@ export function useFetch() {
   const [error, setError] = useState(null);
 
   const generateImage = async () => {
-    // dev port - http://localhost:5000
-    // ongoing - import.meta.env.VITE_BASE_WEBSITE_KEY
     axios
       .post(
-        `${import.meta.env.VITE_BASE_WEBSITE_KEY}/openai/${
-          prompt[1] ? "generateimage" : "edit"
-        }`,
+        `${
+          import.meta.env.VITE_BASE_WEBSITE_KEY ?? "http://localhost:5000"
+        }/openai/${prompt[1] ? "generateimage" : "edit"}`,
         { prompt: prompt[0] }
       )
       .then((data) => {
@@ -37,7 +35,9 @@ export function useFetch() {
       });
   };
 
-  // Whenever prompt (input value), a function is called to make a request to the server
+  /*
+  A new request is sent to the server every time the user's input changes
+  */
   useEffect(() => {
     if (prompt[0] !== "") {
       generateImage();
@@ -49,7 +49,7 @@ export function useFetch() {
     };
   }, [prompt]);
 
-  // get props from other component
+  // receive prompt value from users
   function requestFetch(inputValue, bool) {
     setLoading(true);
     setPrompt([inputValue, bool]);
