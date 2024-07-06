@@ -40,8 +40,8 @@ function TextToImg({ setIsImgToImgContent }) {
           ) : (
             <Screen
               error={error}
-              imageURL={resImage.imageURL}
-              revisedPrompt={resImage.revisedPrompt}
+              imageURL={resImage?.imageURL}
+              revisedPrompt={resImage?.revisedPrompt}
               isImgtoImgContent={false}
               orientationRotate={0}
             />
