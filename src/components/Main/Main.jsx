@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import "./main.css";
+import "../styles/main.css";
+import "../styles/display.css";
+import "../styles/button.css";
+import "../styles/loading.css";
 
-import ImgToImg from "../imgToImg/ImgToImg";
-import TextToImg from "../textToImg/TextToImg";
+import ImgToImg from "../ImgToImg/ImgToImg";
+import TextToImg from "../TextToImg/TextToImg";
 
 const Main = () => {
   /*

@@ -6,7 +6,7 @@ import { FaArrowRight, FaUser } from "react-icons/fa";
 
 const Guide = ({ isImgtoImgContent }) => {
   return (
-    <div className="guide">
+    <section className="guide">
       {isImgtoImgContent ? (
         // img to img guide
         <>
@@ -51,7 +51,7 @@ const Guide = ({ isImgtoImgContent }) => {
           </p>
         </>
       )}
-    </div>
+    </section>
   );
 };
 

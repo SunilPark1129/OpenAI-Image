@@ -31,28 +31,26 @@ function TextToImg({ setIsImgToImgContent }) {
 
   return (
     <Fragment>
-      <div className="display-image">
-        <div className="display-image__screen">
-          {unmounted ? (
-            <Guide isImgtoImgContent={false} />
-          ) : isLoading ? (
-            <Loading />
-          ) : (
-            <Screen
-              error={error}
-              imageURL={resImage?.imageURL}
-              revisedPrompt={resImage?.revisedPrompt}
-              isImgtoImgContent={false}
-              orientationRotate={0}
-            />
-          )}
-        </div>
+      <div className="display-container">
+        {unmounted ? (
+          <Guide isImgtoImgContent={false} />
+        ) : isLoading ? (
+          <Loading />
+        ) : (
+          <Screen
+            error={error}
+            imageURL={resImage?.imageURL}
+            revisedPrompt={resImage?.revisedPrompt}
+            isImgtoImgContent={false}
+            orientationRotate={0}
+          />
+        )}
       </div>
 
-      <div className="text-box">
-        <div className="text-box__input">
+      <div className="tti-container">
+        <div className="tti-container__top">
           <input
-            className="input-text"
+            className="tti-container__top__input"
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}

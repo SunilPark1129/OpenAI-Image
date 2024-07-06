@@ -32,27 +32,3 @@ h1 {
   font-size: 0.8rem;
   font-weight: 400;
 }
-
-button {
-  border: 1px solid transparent;
-  width: 12rem;
-  height: 3rem;
-  font-size: 1rem;
-  font-family: inherit;
-  background-color: transparent;
-  border-color: white;
-  color: rgba(255, 255, 255, 0.87);
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:disabled {
-  filter: brightness(40%);
-  cursor: not-allowed;
-}
-
-@media (hover: hover) {
-  button:hover {
-    border-color: rgb(105, 147, 224);
-  }
-}

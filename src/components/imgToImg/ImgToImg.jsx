@@ -66,33 +66,30 @@ function ImgToImg({ setIsImgToImgContent }) {
 
   return (
     <Fragment>
-      <div className="display-image">
-        <div className="display-image__screen">
-          {unmounted ? (
-            <Guide isImgtoImgContent={true} />
-          ) : isLoading ? (
-            <Loading />
-          ) : (
-            <Screen
-              error={error}
-              imageURL={resImage?.imageURL}
-              isImgtoImgContent={true}
-              originalImage={originalImage}
-              orientationRotate={orientationRotate}
-              isWidthLonger={isWidthLonger}
-            />
-          )}
-        </div>
+      <div className="display-container">
+        {unmounted ? (
+          <Guide isImgtoImgContent={true} />
+        ) : isLoading ? (
+          <Loading />
+        ) : (
+          <Screen
+            error={error}
+            imageURL={resImage?.imageURL}
+            isImgtoImgContent={true}
+            originalImage={originalImage}
+            orientationRotate={orientationRotate}
+            isWidthLonger={isWidthLonger}
+          />
+        )}
       </div>
-      <div className="input-box">
+      <div className="iti-container">
         <label
-          className={
-            isLoading && !unmounted
-              ? "input-file input-file--disabled"
-              : "input-file"
+          className={`iti-container__label ${
+            isLoading && !unmounted && "iti-container__label--disabled"
           }
+            `}
         >
-          <div className="input-file__icon">
+          <div className="iti-container__label__icon">
             <FaImage />
           </div>
           <p>Upload Image</p>
