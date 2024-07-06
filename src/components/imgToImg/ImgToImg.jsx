@@ -75,8 +75,7 @@ function ImgToImg({ setIsImgToImgContent }) {
           ) : (
             <Screen
               error={error}
-              resImage={resImage}
-              prompt={prompt}
+              imageURL={resImage.imageURL}
               isImgtoImgContent={true}
               originalImage={originalImage}
               orientationRotate={orientationRotate}

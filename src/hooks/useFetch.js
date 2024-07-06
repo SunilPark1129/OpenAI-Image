@@ -29,7 +29,6 @@ export function useFetch() {
         if (err.response.status === 400) {
           setError(err.response.data.error);
         } else {
-          console.log("here?");
           setError(String(err));
         }
       });

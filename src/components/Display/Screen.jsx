@@ -7,8 +7,8 @@ import { FaRegEye } from "react-icons/fa";
 
 const Screen = ({
   error,
-  resImage,
-  prompt,
+  imageURL,
+  revisedPrompt,
   isImgtoImgContent,
   originalImage,
   orientationRotate,
@@ -18,17 +18,32 @@ const Screen = ({
   const [isOriginalVisible, setIsOriginalVisible] = useState(false);
 
   useEffect(() => {
-    if (resImage) setIsOriginalVisible(false);
-  }, [resImage]);
+    if (imageURL) setIsOriginalVisible(false);
+  }, [imageURL]);
 
   return error !== null ? (
     <div className="guide">{error}</div>
   ) : (
     <>
-      {resImage ? (
+      {imageURL ? (
         <>
           {!isImgtoImgContent ? (
-            <div className="prompt">{prompt}</div>
+            <>
+              <button
+                className={`revised ${
+                  isOriginalVisible ? "revised--actived" : ""
+                }`}
+                onClick={() => setIsOriginalVisible((prev) => !prev)}
+              >
+                Hey AI, what do you see in the picture?
+              </button>
+              <div
+                className={`prompt ${isOriginalVisible && "prompt--actived"}`}
+              >
+                <p>AI :</p>
+                <p>{revisedPrompt}</p>
+              </div>
+            </>
           ) : (
             /* display the button for comparing the length of the original photo with the edited photo */
             <button
@@ -64,8 +79,11 @@ const Screen = ({
           )}
           {/* fetched image */}
           <img
+            className={`show-prompt ${
+              !isImgtoImgContent && isOriginalVisible && "show-prompt--actived"
+            }`}
             style={{ transform: `rotate(${orientationRotate}deg)` }}
-            src={resImage}
+            src={imageURL}
             alt={"User uploaded image"}
           />
         </>
