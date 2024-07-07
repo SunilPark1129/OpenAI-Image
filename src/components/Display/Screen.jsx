@@ -11,7 +11,6 @@ const Screen = ({
   revisedPrompt,
   isImgtoImgContent,
   originalImage,
-  orientationRotate,
   isWidthLonger,
 }) => {
   // true = display original image
@@ -82,7 +81,6 @@ const Screen = ({
             className={`show-prompt ${
               !isImgtoImgContent && isOriginalVisible && "show-prompt--actived"
             }`}
-            style={{ transform: `rotate(${orientationRotate}deg)` }}
             src={imageURL}
             alt={"User uploaded image"}
           />

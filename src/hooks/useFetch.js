@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export function useFetch() {
-  const [prompt, setPrompt] = useState(["", true]);
+  const [args, setArgs] = useState({
+    prompt: "",
+    isText: true,
+    rotatedVal: 0,
+  });
   const [resImage, setResImage] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,8 +16,8 @@ export function useFetch() {
       .post(
         `${
           import.meta.env.VITE_BASE_WEBSITE_KEY ?? "http://localhost:5000"
-        }/openai/${prompt[1] ? "generateimage" : "edit"}`,
-        { prompt: prompt[0] }
+        }/openai/${args.isText ? "generateimage" : "edit"}`,
+        { prompt: args.prompt, rotatedVal: args.rotatedVal }
       )
       .then((data) => {
         setResImage(data.data.data);
@@ -38,7 +42,7 @@ export function useFetch() {
   A new request is sent to the server every time the user's input changes
   */
   useEffect(() => {
-    if (prompt[0] !== "") {
+    if (args.prompt !== "") {
       generateImage();
     }
     return () => {
@@ -46,12 +50,12 @@ export function useFetch() {
       setResImage(null);
       setError(null);
     };
-  }, [prompt]);
+  }, [args]);
 
   // receive prompt value from users
-  function requestFetch(inputValue, bool) {
+  function requestFetch({ prompt, isText, rotatedVal }) {
     setLoading(true);
-    setPrompt([inputValue, bool]);
+    setArgs({ prompt, isText, rotatedVal });
   }
 
   return [requestFetch, isLoading, resImage, error, prompt];

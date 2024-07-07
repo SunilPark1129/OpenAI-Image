@@ -6,12 +6,12 @@ import { useFetch } from "../../hooks/useFetch";
 
 function TextToImage({ setIsImgToImgContent }) {
   const [unmounted, setUnmounted] = useState(true);
-  const [requestFetch, isLoading, resImage, error, prompt] = useFetch();
+  const [requestFetch, isLoading, resImage, error] = useFetch();
   const [inputValue, setInputValue] = useState("");
 
   const submitPromptHandler = () => {
     if (inputValue.trim() !== "") {
-      requestFetch(inputValue.trim(), true);
+      requestFetch({ prompt: inputValue.trim(), isText: true, rotatedVal: 0 });
       setUnmounted(false);
       setInputValue("");
     }

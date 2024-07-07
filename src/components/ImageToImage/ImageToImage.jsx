@@ -47,7 +47,11 @@ function ImageToImage({ setIsImgToImgContent }) {
       let oriVal = await exifr.orientation(read.result);
       const rotatedVal = rotateCalculator(oriVal);
       setOrientationRotate(rotatedVal);
-      requestFetch(read.result, false);
+      requestFetch({
+        prompt: read.result,
+        isText: false,
+        rotatedVal: rotatedVal,
+      });
     };
     read.readAsDataURL(files[0]);
     setOriginalImage(URL.createObjectURL(files[0]));
