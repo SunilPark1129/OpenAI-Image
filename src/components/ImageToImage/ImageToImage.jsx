@@ -8,12 +8,11 @@ import exifr from "exifr";
 import { rotateCalculator } from "../../utilities/rotateCalculator";
 
 function ImageToImage({ setIsImgToImgContent }) {
+  const refReset = useRef(null);
   const [unmounted, setUnmounted] = useState(true);
   const [originalImage, setOriginalImage] = useState(null);
-  const refReset = useRef(null);
-  const [orientationRotate, setOrientationRotate] = useState(0);
   const [isWidthLonger, setIsWidthLonger] = useState(true);
-  const [requestFetch, isLoading, resImage, error, prompt] = useFetch();
+  const [requestFetch, isLoading, resImage, error] = useFetch();
 
   function uploadChangeHandler(e) {
     const { files } = e.target;
@@ -44,9 +43,8 @@ function ImageToImage({ setIsImgToImgContent }) {
       };
 
       // find image's orientation value
-      let oriVal = await exifr.orientation(read.result);
+      const oriVal = await exifr.orientation(read.result);
       const rotatedVal = rotateCalculator(oriVal);
-      setOrientationRotate(rotatedVal);
       requestFetch({
         prompt: read.result,
         isText: false,
@@ -81,7 +79,6 @@ function ImageToImage({ setIsImgToImgContent }) {
             imageURL={resImage?.imageURL}
             isImgtoImgContent={true}
             originalImage={originalImage}
-            orientationRotate={orientationRotate}
             isWidthLonger={isWidthLonger}
           />
         )}
