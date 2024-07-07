@@ -3,9 +3,8 @@ import "../styles/main.css";
 import "../styles/display.css";
 import "../styles/button.css";
 import "../styles/loading.css";
-
-import ImgToImg from "../ImgToImg/ImgToImg";
-import TextToImg from "../TextToImg/TextToImg";
+import ImageToImage from "../ImageToImage/ImageToImage";
+import TextToImage from "../TextToImage/TextToImage";
 
 const Main = () => {
   /*
@@ -17,9 +16,11 @@ const Main = () => {
   return (
     <main>
       {isImgToImgContent ? (
-        <ImgToImg setIsImgToImgContent={(bool) => setIsImgToImgContent(bool)} />
+        <ImageToImage
+          setIsImgToImgContent={(bool) => setIsImgToImgContent(bool)}
+        />
       ) : (
-        <TextToImg
+        <TextToImage
           setIsImgToImgContent={(bool) => setIsImgToImgContent(bool)}
         />
       )}
