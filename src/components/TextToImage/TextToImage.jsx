@@ -68,7 +68,7 @@ function TextToImage({ setIsImgToImgContent }) {
           disabled={isLoading && !unmounted}
           onClick={contentClickHandler}
         >
-          Words to an image
+          Image to an image
         </button>
       </div>
     </Fragment>
