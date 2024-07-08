@@ -31,6 +31,7 @@ function ImageToImage({ setIsImgToImgContent }) {
     const read = new FileReader();
     read.onloadend = async function () {
       // check if the image's width or height is longer
+      // to compare the original image size and new image size
       const image = new Image();
       image.src = read.result;
       image.onload = () => {
