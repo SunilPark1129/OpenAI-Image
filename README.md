@@ -21,21 +21,6 @@ Go to website - [Link](https://sp-ai-image.netlify.app/)<br>
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-## Installation
-1. Clone the repo
-```
-git clone https://github.com/SunilPark1129/OpenAI-Image.git
-```
-2. Install
-```
-npm i
-```
-2. run the website
-```
-npm run dev
-```
-[Link](https://sp-ai-image.netlify.app/)
-
 ## Self-improvement
 
 - First time using Vite. I was satisfied with how fast it was to use (hmr).
